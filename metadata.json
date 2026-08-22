@@ -1,0 +1,8 @@
+{
+  "name": "MIFA Cafe Menu",
+  "description": "قائمة رقمية تفاعلية فاخرة لمقهى ميفا (MIFA Cafe) تدعم تصفح القهوة والمخبوزات والحلويات باللغتين العربية والإنجليزية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { MenuItem, Language } from '../types';
 import { handleImageFallback } from '../utils/imageUtils';
@@ -17,6 +17,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   index = 0,
 }) => {
   const isAr = language === 'ar';
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <motion.article
@@ -33,12 +34,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       layout
       className="group flex flex-col gap-2.5 sm:gap-4 cursor-pointer"
     >
-      <div className="relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-[#f1f4ef] dark:bg-[#16201b] border border-transparent dark:border-[#213228] shadow-xs transition-all duration-300 group-hover:scale-[1.02] dark:group-hover:border-[#D4AF37]/40">
+      <div className="relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-[#e6eae3] dark:bg-[#16201b] border border-transparent dark:border-[#213228] shadow-xs transition-all duration-300 group-hover:scale-[1.02] dark:group-hover:border-[#D4AF37]/40">
+        {/* Animated Skeleton Shimmer Overlay */}
+        {!isLoaded && (
+          <div className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-[#dbe0d7] via-[#f1f4ef] to-[#dbe0d7] dark:from-[#131b17] dark:via-[#213228] dark:to-[#131b17]" />
+        )}
+
         <img
           alt={isAr ? item.nameAr : item.nameEn}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
+            isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-102'
+          }`}
           src={item.image}
-          onError={(e) => handleImageFallback(e, item.id, item.image)}
+          onLoad={() => setIsLoaded(true)}
+          onError={(e) => {
+            setIsLoaded(true);
+            handleImageFallback(e, item.id, item.image);
+          }}
           loading="lazy"
         />
       </div>

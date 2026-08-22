@@ -16,6 +16,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   if (!item) return null;
 
   const isAr = language === 'ar';
+  const [isLoaded, setIsLoaded] = useState(false);
   const [selectedOpts, setSelectedOpts] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
     if (item.customizations) {
@@ -46,14 +47,25 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         {/* Modal Scrollable Body */}
         <div className="overflow-y-auto flex-1">
           {/* Hero Image */}
-          <div className="relative w-full h-64 sm:h-72 bg-[#f1f4ef] dark:bg-[#16201b]">
+          <div className="relative w-full h-64 sm:h-72 bg-[#e6eae3] dark:bg-[#16201b] overflow-hidden">
+            {/* Animated Skeleton Shimmer Overlay */}
+            {!isLoaded && (
+              <div className="absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-[#dbe0d7] via-[#f1f4ef] to-[#dbe0d7] dark:from-[#131b17] dark:via-[#213228] dark:to-[#131b17]" />
+            )}
+
             <img
               src={item.image}
               alt={isAr ? item.nameAr : item.nameEn}
-              className="w-full h-full object-cover"
-              onError={(e) => handleImageFallback(e, item.id, item.image)}
+              className={`w-full h-full object-cover transition-all duration-500 ${
+                isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-102'
+              }`}
+              onLoad={() => setIsLoaded(true)}
+              onError={(e) => {
+                setIsLoaded(true);
+                handleImageFallback(e, item.id, item.image);
+              }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
 
             {/* Badge on image */}
             <div className="absolute bottom-4 start-4 flex items-center gap-2">

@@ -13,8 +13,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
   onFinish,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
   const isAr = language === 'ar';
 
   useEffect(() => {
@@ -45,8 +43,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
     };
 
     if (totalCount === 0) {
-      setProgress(100);
-      setIsLoaded(true);
       setTimeout(handleClose, 300);
       return;
     }
@@ -54,24 +50,18 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
     // Safety timeout: max 3.5 seconds so user is never stuck
     const safetyTimer = setTimeout(() => {
       if (!isCancelled) {
-        setProgress(100);
-        setIsLoaded(true);
         setTimeout(handleClose, 300);
       }
     }, 3500);
 
-    // Preload each image in parallel
+    // Preload each image in parallel in background
     imagePaths.forEach((src) => {
       const img = new Image();
       const onImageComplete = () => {
         if (isCancelled) return;
         loadedCount++;
-        const currentProg = Math.min(100, Math.round((loadedCount / totalCount) * 100));
-        setProgress(currentProg);
-
         if (loadedCount >= totalCount) {
           clearTimeout(safetyTimer);
-          setIsLoaded(true);
           setTimeout(() => {
             if (!isCancelled) handleClose();
           }, 350);
@@ -159,8 +149,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
                   ? 'قهوة مختصة، مخبوزات طازجة، وتجربة لا تُنسى'
                   : 'Specialty Coffee, Fresh Bakery & Sweet Moments'}
               </p>
-            </motion.div>
-
             </motion.div>
           </div>
 

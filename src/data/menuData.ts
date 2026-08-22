@@ -28,7 +28,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25-125 ك.ك',
     badgeTextEn: '25-125 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/شاي احمر.jpg',
+    image: '/images/شاي احمر.webp',
     isFeatured: true,
     customizations: [
       {
@@ -66,7 +66,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25 ك.ك',
     badgeTextEn: '25 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/شاي احمر.jpg',
+    image: '/images/شاي احمر.webp',
     customizations: [
       {
         id: 'size',
@@ -91,7 +91,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25-125 ك.ك',
     badgeTextEn: '25-125 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/شاي اخضر.jpg',
+    image: '/images/شاي اخضر.webp',
     customizations: [
       {
         id: 'size',
@@ -117,7 +117,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25 ك.ك',
     badgeTextEn: '25 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/شاي اخضر.jpg',
+    image: '/images/شاي اخضر.webp',
     customizations: [
       {
         id: 'size',
@@ -142,7 +142,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25-125 ك.ك',
     badgeTextEn: '25-125 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/طايفي.jpg',
+    image: '/images/طايفي.webp',
     isFeatured: true,
     customizations: [
       {
@@ -169,7 +169,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25 ك.ك',
     badgeTextEn: '25 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/طايفي.jpg',
+    image: '/images/طايفي.webp',
     customizations: [
       {
         id: 'size',
@@ -194,7 +194,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25-125 ك.ك',
     badgeTextEn: '25-125 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/مغربي.jpg',
+    image: '/images/مغربي.webp',
     customizations: [
       {
         id: 'size',
@@ -220,7 +220,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '25 ك.ك',
     badgeTextEn: '25 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/مغربي.jpg',
+    image: '/images/مغربي.webp',
     customizations: [
       {
         id: 'size',
@@ -245,7 +245,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '200 ك.ك',
     badgeTextEn: '200 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/عدني.jpg',
+    image: '/images/عدني.webp',
     isFeatured: true,
     customizations: [
       {
@@ -271,7 +271,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '200 ك.ك',
     badgeTextEn: '200 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/عدني.jpg',
+    image: '/images/عدني.webp',
     customizations: [
       {
         id: 'size',
@@ -296,7 +296,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '140 ك.ك',
     badgeTextEn: '140 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/عدني.jpg',
+    image: '/images/عدني.webp',
     customizations: [
       {
         id: 'size',
@@ -321,7 +321,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '140 ك.ك',
     badgeTextEn: '140 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/عدني.jpg',
+    image: '/images/عدني.webp',
     customizations: [
       {
         id: 'size',
@@ -346,7 +346,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '270 ك.ك',
     badgeTextEn: '270 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/عدني.jpg',
+    image: '/images/عدني.webp',
     customizations: [
       {
         id: 'size',
@@ -375,7 +375,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '40 ك.ك',
     badgeTextEn: '40 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/قهوه سعوديه دله.jpg',
+    image: '/images/قهوه سعوديه دله.webp',
   },
   {
     id: 'saudi-coffee-dallah',
@@ -388,7 +388,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '950 ك.ك',
     badgeTextEn: '950 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/قهوه سعوديه دله.jpg',
+    image: '/images/قهوه سعوديه دله.webp',
     isFeatured: true,
   },
 
@@ -406,7 +406,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '120 ك.ك',
     badgeTextEn: '120 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كركديه.jpg',
+    image: '/images/كركديه.webp',
   },
   {
     id: 'cold-drink-2',
@@ -419,7 +419,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '130 ك.ك',
     badgeTextEn: '130 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كركديه.jpg',
+    image: '/images/كركديه.webp',
   },
   {
     id: 'hibiscus-cold-paper',
@@ -432,7 +432,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '950 ك.ك',
     badgeTextEn: '950 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كركديه.jpg',
+    image: '/images/كركديه.webp',
     isFeatured: true,
     customizations: [
       {
@@ -458,7 +458,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '1050 ك.ك',
     badgeTextEn: '1050 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كركديه.jpg',
+    image: '/images/كركديه.webp',
   },
 
   // ==========================================
@@ -475,7 +475,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '12 ك.ك',
     badgeTextEn: '12 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/ف٦٠.jpg',
+    image: '/images/V60.webp',
     isFeatured: true,
     customizations: [
       {
@@ -501,7 +501,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '15 ك.ك',
     badgeTextEn: '15 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/اسبريسو.jpg',
+    image: '/images/اسبريسو.webp',
     customizations: [
       {
         id: 'sweetness',
@@ -526,7 +526,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '120 ك.ك',
     badgeTextEn: '120 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كابتشينو.jpg',
+    image: '/images/كابتشينو.webp',
   },
   {
     id: 'cappuccino',
@@ -539,7 +539,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '90 ك.ك',
     badgeTextEn: '90 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كابتشينو.jpg',
+    image: '/images/كابتشينو.webp',
   },
   {
     id: 'espresso',
@@ -552,7 +552,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '5 ك.ك',
     badgeTextEn: '5 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/اسبريسو.jpg',
+    image: '/images/اسبريسو.webp',
     customizations: [
       {
         id: 'shot',
@@ -577,7 +577,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '120 ك.ك',
     badgeTextEn: '120 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كابتشينو.jpg',
+    image: '/images/كابتشينو.webp',
     isFeatured: true,
   },
   {
@@ -591,7 +591,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '120 ك.ك',
     badgeTextEn: '120 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كابتشينو.jpg',
+    image: '/images/كابتشينو.webp',
   },
   {
     id: 'macchiato',
@@ -604,7 +604,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '30 ك.ك',
     badgeTextEn: '30 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كرتادو.jpg',
+    image: '/images/كرتادو.webp',
   },
   {
     id: 'cortado',
@@ -617,7 +617,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '80 ك.ك',
     badgeTextEn: '80 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كرتادو.jpg',
+    image: '/images/كرتادو.webp',
   },
   {
     id: 'flat-white',
@@ -630,7 +630,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '100 ك.ك',
     badgeTextEn: '100 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كابتشينو.jpg',
+    image: '/images/كابتشينو.webp',
   },
   {
     id: 'iced-americano',
@@ -643,7 +643,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '320 ك.ك',
     badgeTextEn: '320 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/اسبريسو.jpg',
+    image: '/images/اسبريسو.webp',
   },
   {
     id: 'hot-americano',
@@ -656,7 +656,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '320 ك.ك',
     badgeTextEn: '320 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/اسبريسو.jpg',
+    image: '/images/اسبريسو.webp',
   },
 
   // ==========================================
@@ -673,7 +673,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '700 ك.ك',
     badgeTextEn: '700 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/خبز حالي ساده.jpg',
+    image: '/images/خبز حالي ساده.webp',
     isFeatured: true,
   },
   {
@@ -687,7 +687,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '920 ك.ك',
     badgeTextEn: '920 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/جبنه سايل.jpg',
+    image: '/images/جبنه سايل.webp',
   },
   {
     id: 'sweet-bread-kiri',
@@ -700,7 +700,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '960 ك.ك',
     badgeTextEn: '960 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/جبنه سايل.jpg',
+    image: '/images/جبنه سايل.webp',
   },
   {
     id: 'sweet-bread-cheddar',
@@ -713,7 +713,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '1220 ك.ك',
     badgeTextEn: '1220 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/جبنه شيدر.jpg',
+    image: '/images/جبنه شيدر.webp',
   },
   {
     id: 'sweet-bread-mixed-cheese',
@@ -726,7 +726,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '990 ك.ك',
     badgeTextEn: '990 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/جبنه مكس بالاجبان.jpg',
+    image: '/images/جبنه مكس بالاجبان.webp',
     isFeatured: true,
   },
   {
@@ -740,7 +740,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '150 ك.ك',
     badgeTextEn: '150 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/بسبوسه.jpg',
+    image: '/images/بسبوسه.webp',
   },
   {
     id: 'mifa-breakfast-platter',
@@ -753,7 +753,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '560 ك.ك',
     badgeTextEn: '560 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/جبنه مكس بالاجبان.jpg',
+    image: '/images/جبنه مكس بالاجبان.webp',
     isFeatured: true,
   },
 
@@ -771,7 +771,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '720 ك.ك',
     badgeTextEn: '720 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كرانشي تشيز.jpg',
+    image: '/images/كرانشي تشيز.webp',
     isFeatured: true,
   },
   {
@@ -785,7 +785,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '580 ك.ك',
     badgeTextEn: '580 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/تراميسو.jpg',
+    image: '/images/تراميسو.webp',
     isFeatured: true,
   },
   {
@@ -799,7 +799,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '560 ك.ك',
     badgeTextEn: '560 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/بسبوسه.jpg',
+    image: '/images/بسبوسه.webp',
   },
   {
     id: 'pancakes',
@@ -812,7 +812,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '950 ك.ك',
     badgeTextEn: '950 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/بانكيك.jpg',
+    image: '/images/بانكيك.webp',
   },
   {
     id: 'snacks-dessert',
@@ -825,7 +825,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '1125 ك.ك',
     badgeTextEn: '1125 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/كرانشي تشيز.jpg',
+    image: '/images/كرانشي تشيز.webp',
   },
 
   // ==========================================
@@ -842,7 +842,7 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextAr: '850 ك.ك',
     badgeTextEn: '850 kcal',
     badgeIcon: 'local_fire_department',
-    image: '/images/قهوه سعوديه دله.jpg',
+    image: '/images/قهوه سعوديه دله.webp',
   },
   {
     id: 'nova-water-small',

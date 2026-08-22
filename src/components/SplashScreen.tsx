@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MIFA_LOGO_URL } from '../data/menuData';
+import { MIFA_LOGO_URL, MENU_ITEMS } from '../data/menuData';
 import { Language } from '../types';
 
 interface SplashScreenProps {
@@ -13,6 +13,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
   onFinish,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
   const isAr = language === 'ar';
 
   useEffect(() => {
@@ -24,15 +26,70 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
       return;
     }
 
-    // Auto dismiss after 5 seconds
-    const timer = setTimeout(() => {
-      handleClose();
-    }, 5000);
+    // Collect all unique images to preload
+    const imagePaths = Array.from(
+      new Set([
+        MIFA_LOGO_URL,
+        ...MENU_ITEMS.map((item) => item.image).filter(Boolean),
+      ])
+    );
 
-    return () => clearTimeout(timer);
-  }, []);
+    let loadedCount = 0;
+    const totalCount = imagePaths.length;
+    let isCancelled = false;
 
-  const handleClose = () => {
+    const handleClose = () => {
+      sessionStorage.setItem('mifa_intro_seen', 'true');
+      setIsVisible(false);
+      if (onFinish) onFinish();
+    };
+
+    if (totalCount === 0) {
+      setProgress(100);
+      setIsLoaded(true);
+      setTimeout(handleClose, 300);
+      return;
+    }
+
+    // Safety timeout: max 3.5 seconds so user is never stuck
+    const safetyTimer = setTimeout(() => {
+      if (!isCancelled) {
+        setProgress(100);
+        setIsLoaded(true);
+        setTimeout(handleClose, 300);
+      }
+    }, 3500);
+
+    // Preload each image in parallel
+    imagePaths.forEach((src) => {
+      const img = new Image();
+      const onImageComplete = () => {
+        if (isCancelled) return;
+        loadedCount++;
+        const currentProg = Math.min(100, Math.round((loadedCount / totalCount) * 100));
+        setProgress(currentProg);
+
+        if (loadedCount >= totalCount) {
+          clearTimeout(safetyTimer);
+          setIsLoaded(true);
+          setTimeout(() => {
+            if (!isCancelled) handleClose();
+          }, 350);
+        }
+      };
+
+      img.onload = onImageComplete;
+      img.onerror = onImageComplete;
+      img.src = src;
+    });
+
+    return () => {
+      isCancelled = true;
+      clearTimeout(safetyTimer);
+    };
+  }, [onFinish]);
+
+  const handleSkip = () => {
     sessionStorage.setItem('mifa_intro_seen', 'true');
     setIsVisible(false);
     if (onFinish) onFinish();
@@ -88,7 +145,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
+              transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
               className="flex flex-col items-center gap-2"
             >
               <span className="text-[#D4AF37] text-xs sm:text-sm font-semibold tracking-wider">
@@ -104,23 +161,32 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
               </p>
             </motion.div>
 
-            {/* Loading / Progress Line */}
+            {/* Real Progress Bar & Image Loading Status */}
             <motion.div
-              initial={{ opacity: 0, width: '0%' }}
-              animate={{ opacity: 1, width: '120px' }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="h-[2px] bg-[#D4AF37]/30 rounded-full overflow-hidden mt-2 relative w-[120px]"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="flex flex-col items-center gap-2 mt-2 w-full max-w-[200px]"
             >
-              <motion.div
-                initial={{ x: '-100%' }}
-                animate={{ x: '100%' }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 1.2,
-                  ease: 'easeInOut',
-                }}
-                className="absolute inset-0 bg-[#D4AF37] w-full"
-              />
+              <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden relative shadow-inner">
+                <motion.div
+                  className="h-full bg-gradient-to-r from-[#D4AF37] via-[#f3e5ab] to-[#D4AF37] rounded-full transition-all duration-200 ease-out"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+
+              <div className="flex items-center justify-between w-full text-[11px] text-[#c0c9c3]/80 font-medium px-0.5">
+                <span>
+                  {isLoaded
+                    ? isAr
+                      ? 'تم تجهيز القائمة!'
+                      : 'Menu ready!'
+                    : isAr
+                    ? 'جاري تحميل الصور...'
+                    : 'Preloading images...'}
+                </span>
+                <span className="text-[#D4AF37] font-bold">{progress}%</span>
+              </div>
             </motion.div>
           </div>
 
@@ -128,8 +194,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.4 }}
-            onClick={handleClose}
+            transition={{ delay: 0.5, duration: 0.4 }}
+            onClick={handleSkip}
             className="absolute bottom-8 text-xs text-[#c0c9c3] hover:text-[#D4AF37] px-4 py-2 rounded-full border border-[#c0c9c3]/20 hover:border-[#D4AF37]/50 transition-colors cursor-pointer"
           >
             {isAr ? 'تخطي' : 'Skip'}

@@ -161,32 +161,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
               </p>
             </motion.div>
 
-            {/* Real Progress Bar & Image Loading Status */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="flex flex-col items-center gap-2 mt-2 w-full max-w-[200px]"
-            >
-              <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden relative shadow-inner">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-[#D4AF37] via-[#f3e5ab] to-[#D4AF37] rounded-full transition-all duration-200 ease-out"
-                  style={{ width: `${progress}%` }}
-                />
-              </div>
-
-              <div className="flex items-center justify-between w-full text-[11px] text-[#c0c9c3]/80 font-medium px-0.5">
-                <span>
-                  {isLoaded
-                    ? isAr
-                      ? 'تم تجهيز القائمة!'
-                      : 'Menu ready!'
-                    : isAr
-                    ? 'جاري تحميل الصور...'
-                    : 'Preloading images...'}
-                </span>
-                <span className="text-[#D4AF37] font-bold">{progress}%</span>
-              </div>
             </motion.div>
           </div>
 

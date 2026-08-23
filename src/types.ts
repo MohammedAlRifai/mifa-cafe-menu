@@ -35,7 +35,7 @@ export interface MenuItem {
   id: string;
   nameAr: string;
   nameEn: string;
-  price: number;
+  price: number | string;
   category: CategoryId;
   descriptionAr: string;
   descriptionEn: string;

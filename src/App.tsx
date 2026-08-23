@@ -24,7 +24,7 @@ export const App: React.FC = () => {
     try {
       const saved = localStorage.getItem('mifa_theme');
       if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return false;
     } catch {
       return false;
     }

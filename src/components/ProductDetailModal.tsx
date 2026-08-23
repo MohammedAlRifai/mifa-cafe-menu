@@ -143,7 +143,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                                   isSelected ? 'text-[#ffdf90] dark:text-[#0d1310]' : 'text-[#D4AF37]'
                                 }`}
                               >
-                                +{opt.price} {isAr ? 'ر.س' : 'SAR'}
+                                {opt.price} {isAr ? 'ر.س' : 'SAR'}
                               </span>
                             )}
                           </button>

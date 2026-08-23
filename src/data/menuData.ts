@@ -44,17 +44,6 @@ export const MENU_ITEMS: MenuItem[] = [
           { nameAr: 'قزاز - براد شاي كامل', nameEn: 'Glass - Full Tea Pot', price: 21 },
         ],
       },
-      {
-        id: 'sweetness',
-        titleAr: 'مستوى السكر',
-        titleEn: 'Sugar Level',
-        options: [
-          { nameAr: 'مضبوط', nameEn: 'Regular', price: 0 },
-          { nameAr: 'خفيف', nameEn: 'Light', price: 0 },
-          { nameAr: 'بدون سكر (سادة)', nameEn: 'No Sugar', price: 0 },
-          { nameAr: 'سكر زيادة', nameEn: 'Extra Sweet', price: 0 },
-        ],
-      },
     ],
   },
   {
@@ -364,18 +353,6 @@ export const MENU_ITEMS: MenuItem[] = [
     badgeTextEn: '15 kcal',
     badgeIcon: 'local_fire_department',
     image: '/images/اسبريسو.webp',
-    customizations: [
-      {
-        id: 'sweetness',
-        titleAr: 'مستوى السكر',
-        titleEn: 'Sweetness',
-        options: [
-          { nameAr: 'سادة (بدون سكر)', nameEn: 'Sada (No Sugar)', price: 0 },
-          { nameAr: 'مضبوط (وسط)', nameEn: 'Medium Sweet', price: 0 },
-          { nameAr: 'حلو (زيادة)', nameEn: 'Sweet', price: 0 },
-        ],
-      },
-    ],
   },
   {
     id: 'turkish-coffee-milk-nova',

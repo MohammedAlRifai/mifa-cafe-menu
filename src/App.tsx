@@ -16,6 +16,47 @@ import { ProductDetailModal } from './components/ProductDetailModal';
 import { SearchModal } from './components/SearchModal';
 import { SplashScreen } from './components/SplashScreen';
 
+// ═══════════════════════════════════════════════════════════════
+// 🚀 MAINTENANCE MODE TOGGLE
+// Change this ONE variable to turn the site on/off
+// true  = Website is LIVE
+// false = Website is in MAINTENANCE MODE
+// ═══════════════════════════════════════════════════════════════
+const IS_SITE_LIVE = true; // <─── CHANGE THIS TO false TO TURN OFF THE SITE
+
+// Maintenance page component
+const MaintenancePage: React.FC<{ language: Language }> = ({ language }) => {
+  const isRTL = language === 'ar';
+  
+  return (
+    <div 
+      dir={isRTL ? 'rtl' : 'ltr'}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f7faf5',
+        color: '#191d19',
+        fontFamily: 'system-ui, sans-serif',
+        gap: '0.5rem',
+        padding: '1rem',
+        textAlign: 'center'
+      }}
+    >
+      <h1 style={{ fontSize: '2rem', fontWeight: '500', margin: 0 }}>
+        {isRTL ? 'الخدمة غير متاحة مؤقتاً' : 'Service Temporarily Unavailable'}
+      </h1>
+      <p style={{ color: '#666', fontSize: '1rem', margin: 0 }}>
+        {isRTL 
+          ? 'نعمل على تحسين الخدمة، نعتذر عن الإزعاج' 
+          : "We're working on improving the service, sorry for the inconvenience"}
+      </p>
+    </div>
+  );
+};
+
 export const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('ar');
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
@@ -50,6 +91,13 @@ export const App: React.FC = () => {
       localStorage.setItem('mifa_theme', 'light');
     }
   }, [isDarkMode]);
+
+  // ═══════════════════════════════════════════════════════════════
+  // 🚦 MAINTENANCE MODE CHECK - Show maintenance page if site is off
+  // ═══════════════════════════════════════════════════════════════
+  if (!IS_SITE_LIVE) {
+    return <MaintenancePage language={language} />;
+  }
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === 'ar' ? 'en' : 'ar'));

@@ -22,7 +22,7 @@ import { SplashScreen } from './components/SplashScreen';
 // true  = Website is LIVE
 // false = Website is in MAINTENANCE MODE
 // ═══════════════════════════════════════════════════════════════
-const IS_SITE_LIVE = true; // <─── CHANGE THIS TO false TO TURN OFF THE SITE
+const IS_SITE_LIVE = false; // <─── CHANGE THIS TO false TO TURN OFF THE SITE
 
 // Maintenance page component
 const MaintenancePage: React.FC<{ language: Language }> = ({ language }) => {
